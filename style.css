@@ -1,0 +1,54 @@
+:root {
+  --so-bg: #0d1117;
+  --so-surface: #161b22;
+  --so-accent: #00e5ff;
+  --so-text: #e6edf3;
+  --so-muted: #8b949e;
+  --so-critical: #ff4d4f;
+  --so-high: #ff7a00;
+  --so-medium: #f0c040;
+  --so-low: #3fb950;
+}
+
+body {
+  background-color: var(--so-bg);
+  color: var(--so-text);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #0d1117 0%, #0a2540 100%);
+  border-bottom: 1px solid #21262d;
+  padding: 80px 0;
+}
+
+.hero-section h1 {
+  color: var(--so-accent);
+  font-family: 'Courier New', monospace;
+  letter-spacing: -1px;
+}
+
+.navbar.bg-dark {
+  background-color: var(--so-surface) !important;
+  border-bottom: 1px solid #21262d;
+}
+
+.cve-card {
+  background-color: var(--so-surface);
+  border: 1px solid #21262d;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.2s;
+}
+
+.cve-card:hover {
+  border-color: var(--so-accent);
+}
+
+.badge-critical { background-color: var(--so-critical); }
+.badge-high     { background-color: var(--so-high); }
+.badge-medium   { background-color: var(--so-medium); color: #000; }
+.badge-low      { background-color: var(--so-low); }
+
+footer a { color: var(--so-accent); }
