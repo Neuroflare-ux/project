@@ -54,4 +54,31 @@
               <option>Other</option>
             </select>
           </div>
-            
+                 <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea id="desc" class="form-control bg-dark text-light border-secondary" rows="4" placeholder="Describe the issue..."></textarea>
+          </div>
+
+          <div id="error-msg" class="text-danger mb-3" style="display:none;"></div>
+
+          <button class="btn btn-primary w-100" onclick="submitReport()">Submit Report</button>
+        </div>
+
+        <div id="success-box" class="stat-card p-4 text-center mt-4" style="display:none;">
+          <h4 class="text-success">✅ Report Submitted</h4>
+          <p class="text-muted">Your ticket number is: <strong id="ticket-num" class="text-info"></strong></p>
+          <p class="text-muted small">We'll review your report and follow up within 48 hours.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-light text-center py-3 mt-5">
+    <p class="mb-0">SecureOps Dashboard &copy; 2026</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>
