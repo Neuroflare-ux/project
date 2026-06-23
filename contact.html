@@ -35,4 +35,23 @@
         <h1 style="color:#00e5ff;">Report a Security Concern</h1>
         <p class="text-muted mb-4">Submit a vulnerability report or general security question. All reports are logged with a ticket number.</p>
 
-        
+      <div class="stat-card p-4">
+          <div class="mb-3">
+            <label class="form-label">Your Name</label>
+            <input type="text" id="name" class="form-control bg-dark text-light border-secondary" placeholder="Jane Doe" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email Address</label>
+            <input type="email" id="email" class="form-control bg-dark text-light border-secondary" placeholder="jane@example.com" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Issue Type</label>
+            <select id="issue" class="form-select bg-dark text-light border-secondary">
+              <option value="">-- Select --</option>
+              <option>Vulnerability Report</option>
+              <option>Misconfiguration Found</option>
+              <option>General Question</option>
+              <option>Other</option>
+            </select>
+          </div>
+            
