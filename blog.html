@@ -32,4 +32,43 @@
       <h1 style="color:#00e5ff;">SecureOps Blog</h1>
       <p class="text-muted mb-4">Insights, news, and updates on cloud security and incident response.</p>
 
-        
+         <div class="row">
+
+      <div class="col-md-6 mb-4">
+        <div class="stat-card p-4 h-100">
+          <span class="badge bg-danger mb-2">Case Study</span>
+          <h5>The Capital One Breach Explained</h5>
+          <p class="text-muted small">July 2019 — A misconfigured AWS WAF allowed an attacker to perform a Server Side Request Forgery (SSRF) attack, accessing the EC2 metadata service and stealing temporary credentials. Over 100 million customer records were exposed.</p>
+          <p class="text-muted small"><strong>Lesson:</strong> Restrict the EC2 metadata service (IMDSv2) and audit WAF rules regularly.</p>
+          <a href="cloud-checker.html" class="btn btn-sm btn-outline-info mt-2">Check your config →</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-4">
+        <div class="stat-card p-4 h-100">
+          <span class="badge bg-warning text-dark mb-2">Guide</span>
+          <h5>Why S3 Buckets Get Exposed</h5>
+          <p class="text-muted small">Public S3 buckets are one of the most common cloud misconfigurations. They often happen when developers set buckets to public during testing and forget to revert the setting before deploying to production.</p>
+          <p class="text-muted small"><strong>Fix:</strong> Enable "Block all public access" at the account level in AWS, not just per bucket.</p>
+          <a href="playbooks.html" class="btn btn-sm btn-outline-info mt-2">See the playbook →</a>
+        </div>
+      </div>
+
+
+      <div class="col-md-6 mb-4">
+        <div class="stat-card p-4 h-100">
+          <span class="badge bg-warning text-dark mb-2">Guide</span>
+          <h5>Why S3 Buckets Get Exposed</h5>
+          <p class="text-muted small">Public S3 buckets are one of the most common cloud misconfigurations. They often happen when developers set buckets to public during testing and forget to revert the setting before deploying to production.</p>
+          <p class="text-muted small"><strong>Fix:</strong> Enable "Block all public access" at the account level in AWS, not just per bucket.</p>
+          <a href="playbooks.html" class="btn btn-sm btn-outline-info mt-2">See the playbook →</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-4">
+        <div class="stat-card p-4 h-100">
+          <span class="badge bg-danger mb-2">Case Study</span>
+          <h5>Uber's 2022 Social Engineering Attack</h5>
+          <p class="text-muted small">An attacker texted an Uber employee posing as IT support, convinced them to share their VPN credentials, then accessed internal Slack, HackerOne reports, and cloud infrastructure. No malware was used — just manipulation.</p>
+          <p class="text-muted small"><strong>Lesson:</strong> Train staff to verify identity requests. MFA alone isn't enough without user awareness.</p>
+        </div>
