@@ -12,4 +12,16 @@ function submitReport() {
     return;
   }
 
-  
+  if (!email.includes('@') || !email.includes('.')) {
+    errorBox.textContent = 'Please enter a valid email address.';
+    errorBox.style.display = 'block';
+    return;
+  }
+
+  errorBox.style.display = 'none';
+
+  var ticket = 'SEC-' + Math.floor(Math.random() * 90000 + 10000);
+  document.getElementById('ticket-num').textContent = ticket;
+  document.getElementById('success-box').style.display = 'block';
+  document.querySelector('.stat-card').style.display = 'none';
+}
