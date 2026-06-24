@@ -1,40 +1,51 @@
 async function loadCVEs() {
-  const feed = document.getElementById('cve-feed');
-  const countBadge = document.getElementById('cve-count');
+  var feed = document.getElementById('cve-feed');
+  var badge = document.getElementById('cve-count');
 
   try {
-    const res = await fetch(
-      'https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage=9&noRejected'
-    );
-    const data = await res.json();
-    const cves = data.vulnerabilities || [];
+    var offset = Math.floor(Math.random() * 2000);
+    var url = 'https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage=9&startIndex=' + offset;
+    var res = await fetch(url);
+    var data = await res.json();
+    var cves = data.vulnerabilities || [];
 
-    countBadge.textContent = `${cves.length} recent`;
-    feed.innerHTML = '';
+    if (cves.length === 0) throw new Error('empty');
 
-    cves.forEach(({ cve }) => {
-      const id = cve.id;
-      const desc = cve.descriptions.find(d => d.lang === 'en')?.value || 'No description available.';
-      const score = cve.metrics?.cvssMetricV31?.[0]?.cvssData?.baseScore
-                 || cve.metrics?.cvssMetricV30?.[0]?.cvssData?.baseScore
-                 || null;
-      const severity = score >= 9 ? 'critical' : score >= 7 ? 'high' : score >= 4 ? 'medium' : 'low';
-      const label = score ? severity.toUpperCase() : 'N/A';
+    if (badge) badge.textContent = cves.length + ' loaded';
+    var html = '';
 
-      feed.innerHTML += `
-        <div class="col-md-6 col-lg-4">
-          <div class="cve-card">
-            <div class="d-flex justify-content-between align-items-start mb-2">
-              <span class="fw-bold text-info">${id}</span>
-              <span class="badge badge-${severity}">${label}${score ? ' ' + score : ''}</span>
-            </div>
-            <p class="small mb-0" style="color: var(--so-muted);">${desc.substring(0, 160)}...</p>
-          </div>
-        </div>`;
-    });
+    for (var i = 0; i < cves.length; i++) {
+      var cve = cves[i].cve;
+      var id = cve.id;
+      var desc = cve.descriptions[0] ? cve.descriptions[0].value : 'No description.';
+      var score = null;
+      if (cve.metrics && cve.metrics.cvssMetricV31) {
+        score = cve.metrics.cvssMetricV31[0].cvssData.baseScore;
+      } else if (cve.metrics && cve.metrics.cvssMetricV30) {
+        score = cve.metrics.cvssMetricV30[0].cvssData.baseScore;
+      }
+      var severity = 'low';
+      if (score >= 9) severity = 'critical';
+      else if (score >= 7) severity = 'high';
+      else if (score >= 4) severity = 'medium';
+      var color = severity === 'critical' ? 'danger' : severity === 'high' ? 'warning' : severity === 'medium' ? 'info' : 'secondary';
+
+      html += '<div class="col-md-6 col-lg-4 mb-3">';
+      html += '<div class="stat-card p-3">';
+      html += '<div class="d-flex justify-content-between mb-2">';
+      html += '<strong class="text-info small">' + id + '</strong>';
+      html += '<span class="badge bg-' + color + (color === 'warning' ? ' text-dark' : '') + '">';
+      html += severity.toUpperCase() + (score ? ' ' + score : '') + '</span>';
+      html += '</div>';
+      html += '<p class="small text-muted mb-0">' + desc.substring(0, 160) + '...</p>';
+      html += '</div></div>';
+    }
+
+    feed.innerHTML = html;
+
   } catch (err) {
-    feed.innerHTML = `<div class="col-12 text-center text-danger py-4">Could not load CVE data. Check your connection.</div>`;
-    countBadge.textContent = 'Error';
+    feed.innerHTML = '<div class="col-12 text-center text-muted py-4">CVE data temporarily unavailable. <a href="https://nvd.nist.gov" target="_blank" class="text-info">Visit NIST directly</a></div>';
+    if (badge) badge.textContent = 'unavailable';
   }
 }
 
