@@ -3,7 +3,7 @@ var allCVEs = [];
 async function loadThreats() {
   var container = document.getElementById('cve-table');
   try {
-    var res = await fetch('https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage=20&pubStartDate=2026-06-01T00:00:00.000');
+    var res = await fetch('https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage=9&noRejected');
     var data = await res.json();
     allCVEs = data.vulnerabilities || [];
     renderCVEs(allCVEs);

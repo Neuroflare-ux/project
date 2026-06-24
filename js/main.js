@@ -4,7 +4,7 @@ async function loadCVEs() {
 
   try {
     const res = await fetch(
-      'https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage=9&pubStartDate=2026-06-01T00:00:00.000'
+      'https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage=9&noRejected'
     );
     const data = await res.json();
     const cves = data.vulnerabilities || [];
