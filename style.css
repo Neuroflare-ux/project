@@ -52,3 +52,23 @@ body {
 .badge-low      { background-color: var(--so-low); }
 
 footer a { color: var(--so-accent); }
+
+/* Push footer to bottom */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main, .container {
+  flex: 1;
+}
+
+footer {
+  margin-top: auto;
+}
