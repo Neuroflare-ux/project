@@ -9,39 +9,63 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand" href="index.html"> SecureOps</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navMenu">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="threat-intel.html">Threat Intel</a></li>
-            <li class="nav-item"><a class="nav-link" href="cloud-checker.html">Cloud Checker</a></li>
-            <li class="nav-item"><a class="nav-link active" href="playbooks.html">Playbooks</a></li>
-            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-            <li class="nav-item"><a class="nav-link" href="tools.html">Tools</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          </ul>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">🛡️ SecureOps</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="threat-intel.html">Threat Intel</a></li>
+          <li class="nav-item"><a class="nav-link" href="cloud-checker.html">Cloud Checker</a></li>
+          <li class="nav-item"><a class="nav-link active" href="playbooks.html">Playbooks</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="tools.html">Tools</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    <h1 style="color:#00e5ff;">Incident Response Playbooks</h1>
+    <p class="text-muted mb-4">Step-by-step guides for common cloud security incidents.</p>
+
+    <div class="accordion" id="playbookAccordion">
+
+      <!-- Playbook 1 -->
+      <div class="accordion-item bg-dark border-secondary mb-2">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed bg-dark text-light border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#p1">
+             Compromised Credentials
+          </button>
+        </h2>
+        <div id="p1" class="accordion-collapse collapse" data-bs-parent="#playbookAccordion">
+          <div class="accordion-body bg-dark text-light">
+            <ol>
+              <li>Immediately revoke the affected access keys or tokens in your cloud console.</li>
+              <li>Check CloudTrail / audit logs for any actions taken with those credentials.</li>
+              <li>Identify what resources were accessed or modified.</li>
+              <li>Rotate all secrets and API keys across affected services.</li>
+              <li>Enable MFA on the account if not already active.</li>
+              <li>Document the incident and notify your security team.</li>
+            </ol>
+            <a href="cloud-checker.html" class="btn btn-sm btn-outline-info mt-2">Check your IAM setup →</a>
+          </div>
         </div>
       </div>
-    </nav>
 
-    <div class="container my-5">
-      <h1 style="color:#00e5ff;">Incident Response Playbooks</h1>
-      <p class="text-muted mb-4">Step-by-step guides for responding to common cloud security incidents.</p>
-
-      <div class="accordion" id="playbookAccordion">
-        <div class="accordion-item bg-dark border-secondary mb-2">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#p2">
-               Exposed Storage Bucket
-            </button>
-          </h2>
+      <!-- Playbook 2 -->
+      <div class="accordion-item bg-dark border-secondary mb-2">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed bg-dark text-light border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#p2">
+             Exposed Storage Bucket
+          </button>
+        </h2>
         <div id="p2" class="accordion-collapse collapse" data-bs-parent="#playbookAccordion">
-          <div class="accordion-body text-muted">
+          <div class="accordion-body bg-dark text-light">
             <ol>
               <li>Set the bucket ACL to private immediately in the cloud console.</li>
               <li>Remove any public access block exceptions.</li>
@@ -50,19 +74,20 @@
               <li>Notify affected users if personal data was involved.</li>
               <li>Enable bucket versioning and access logging going forward.</li>
             </ol>
-            <a href="tools.html" class="btn btn-sm btn-outline-info">Tools to scan your buckets →</a>
+            <a href="tools.html" class="btn btn-sm btn-outline-info mt-2">Tools to scan your buckets →</a>
           </div>
         </div>
       </div>
 
+      <!-- Playbook 3 -->
       <div class="accordion-item bg-dark border-secondary mb-2">
         <h2 class="accordion-header">
-          <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#p3">
+          <button class="accordion-button collapsed bg-dark text-light border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#p3">
              Ransomware Attack
           </button>
         </h2>
         <div id="p3" class="accordion-collapse collapse" data-bs-parent="#playbookAccordion">
-          <div class="accordion-body text-muted">
+          <div class="accordion-body bg-dark text-light">
             <ol>
               <li>Isolate affected instances — detach from the network immediately.</li>
               <li>Do NOT pay the ransom — it does not guarantee recovery.</li>
@@ -75,14 +100,15 @@
         </div>
       </div>
 
+      <!-- Playbook 4 -->
       <div class="accordion-item bg-dark border-secondary mb-2">
         <h2 class="accordion-header">
-          <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#p4">
+          <button class="accordion-button collapsed bg-dark text-light border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#p4">
              DDoS Attack
           </button>
         </h2>
         <div id="p4" class="accordion-collapse collapse" data-bs-parent="#playbookAccordion">
-          <div class="accordion-body text-muted">
+          <div class="accordion-body bg-dark text-light">
             <ol>
               <li>Enable your cloud provider's DDoS protection (AWS Shield, GCP Cloud Armor).</li>
               <li>Apply rate limiting rules on your load balancer or WAF.</li>
