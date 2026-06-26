@@ -2,7 +2,7 @@
   --so-bg: #0d1117;
   --so-surface: #161b22;
   --so-accent: #00e5ff;
-  --so-text: #deeaf4;
+  --so-text: #e6edf3;
   --so-muted: #8b949e;
   --so-critical: #ff4d4f;
   --so-high: #ff7a00;
@@ -10,10 +10,27 @@
   --so-low: #3fb950;
 }
 
+/* Push footer to bottom */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   background-color: var(--so-bg);
   color: var(--so-text);
   font-family: 'Segoe UI', system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+}
+
+footer {
+  margin-top: auto;
 }
 
 .hero-section {
@@ -33,7 +50,8 @@ body {
   border-bottom: 1px solid #21262d;
 }
 
-.cve-card {
+/* Card styles */
+.stat-card {
   background-color: var(--so-surface);
   border: 1px solid #21262d;
   border-radius: 8px;
@@ -42,33 +60,58 @@ body {
   transition: border-color 0.2s;
 }
 
-.cve-card:hover {
+.stat-card:hover {
   border-color: var(--so-accent);
 }
 
+/* Accordion fixes */
+.accordion-item.bg-dark {
+  background-color: var(--so-surface) !important;
+}
+
+.accordion-button.bg-dark {
+  background-color: var(--so-surface) !important;
+  color: var(--so-text) !important;
+}
+
+.accordion-button.bg-dark:focus {
+  box-shadow: 0 0 0 2px var(--so-accent);
+}
+
+.accordion-button.bg-dark:not(.collapsed) {
+  background-color: #1c2333 !important;
+  color: var(--so-accent) !important;
+}
+
+.accordion-body.bg-dark {
+  background-color: var(--so-surface) !important;
+  color: var(--so-text) !important;
+}
+
+/* Badge colors */
 .badge-critical { background-color: var(--so-critical); }
 .badge-high     { background-color: var(--so-high); }
 .badge-medium   { background-color: var(--so-medium); color: #000; }
 .badge-low      { background-color: var(--so-low); }
 
+/* Footer links */
 footer a { color: var(--so-accent); }
 
-/* Push footer to bottom */
-html, body {
-  height: 100%;
-  margin: 0;
+/* Progress bar */
+.progress {
+  background-color: #21262d;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+/* Form inputs */
+.form-control.bg-dark,
+.form-select.bg-dark {
+  background-color: var(--so-surface) !important;
+  color: var(--so-text) !important;
+  border-color: #21262d;
 }
 
-main, .container {
-  flex: 1;
-}
-
-footer {
-  margin-top: auto;
+.form-control.bg-dark:focus,
+.form-select.bg-dark:focus {
+  border-color: var(--so-accent);
+  box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.2);
 }
