@@ -1,0 +1,254 @@
+:root {
+  --so-bg: #0a0a0a;
+  --so-surface: #141414;
+  --so-accent: #e63946;
+  --so-accent-hover: #ff1a2e;
+  --so-text: #f0f0f0;
+  --so-muted: #999999;
+  --so-border: #2a2a2a;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--so-bg);
+  color: var(--so-text);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 1.05rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1 0 auto;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #0a0a0a !important;
+  border-bottom: 2px solid var(--so-accent);
+}
+
+.navbar .nav-link {
+  color: #f0f0f0 !important;
+  font-size: 0.95rem;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--so-accent) !important;
+}
+
+.navbar-brand {
+  color: var(--so-accent) !important;
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Hero */
+.hero-section {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0005 100%);
+  border-bottom: 2px solid var(--so-accent);
+  padding: 80px 0;
+}
+
+.hero-section h1 {
+  color: var(--so-accent);
+  font-family: 'Courier New', monospace;
+  font-size: 2.8rem;
+  letter-spacing: -1px;
+}
+
+/* Cards */
+.stat-card {
+  background-color: var(--so-surface);
+  border: 1px solid var(--so-border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.2s;
+  color: var(--so-text);
+}
+
+.stat-card:hover {
+  border-color: var(--so-accent);
+}
+
+/* Footer */
+footer {
+  flex-shrink: 0;
+  width: 100%;
+  background-color: #0a0a0a !important;
+  border-top: 2px solid var(--so-accent);
+  color: var(--so-text) !important;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+footer p {
+  color: var(--so-muted) !important;
+  margin: 0;
+}
+
+/* Accordion */
+.accordion-item,
+.accordion-item.bg-dark {
+  background-color: var(--so-surface) !important;
+  border-color: var(--so-border) !important;
+}
+
+.accordion-button,
+.accordion-button.bg-dark {
+  background-color: var(--so-surface) !important;
+  color: var(--so-text) !important;
+  font-size: 1rem;
+}
+
+.accordion-button:not(.collapsed) {
+  color: var(--so-accent) !important;
+  background-color: #1a0005 !important;
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 2px var(--so-accent);
+}
+
+.accordion-body,
+.accordion-body.bg-dark {
+  background-color: var(--so-surface) !important;
+  color: var(--so-text) !important;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Forms */
+.form-control,
+.form-select,
+.form-control.bg-dark,
+.form-select.bg-dark {
+  background-color: var(--so-surface) !important;
+  color: var(--so-text) !important;
+  border-color: var(--so-border) !important;
+  font-size: 1rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--so-accent) !important;
+  box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.3) !important;
+}
+
+.form-label {
+  color: var(--so-text);
+  font-size: 1rem;
+}
+
+/* Tech stack tiles — THIS IS THE FIX */
+.tech-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--so-surface);
+  border: 1px solid var(--so-border);
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  user-select: none;
+  color: var(--so-text);
+  white-space: nowrap;
+}
+
+.tech-check::before {
+  content: '☐';
+  font-size: 1.1rem;
+  color: var(--so-muted);
+}
+
+.tech-check:hover {
+  border-color: var(--so-accent);
+  color: var(--so-accent);
+}
+
+.tech-check.selected {
+  background-color: rgba(230, 57, 70, 0.15);
+  border-color: var(--so-accent);
+  color: var(--so-accent);
+}
+
+.tech-check.selected::before {
+  content: '☑';
+  color: var(--so-accent);
+}
+
+/* Filter buttons */
+.filter-btn {
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.filter-btn:hover {
+  opacity: 1;
+}
+
+.active-filter {
+  opacity: 1 !important;
+  box-shadow: 0 0 0 2px var(--so-accent);
+}
+
+/* Text */
+.text-muted {
+  color: var(--so-muted) !important;
+}
+
+.text-info {
+  color: #e63946 !important;
+}
+
+/* Progress */
+.progress {
+  background-color: var(--so-border);
+}
+
+/* Badges */
+.badge-critical { background-color: #e63946; }
+.badge-high     { background-color: #ff7a00; }
+.badge-medium   { background-color: #f0c040; color: #000; }
+.badge-low      { background-color: #3fb950; }
+
+footer a { color: var(--so-accent); }
+
+code {
+  background-color: #1a0005;
+  color: var(--so-accent);
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--so-accent) !important;
+  border-color: var(--so-accent) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--so-accent-hover) !important;
+  border-color: var(--so-accent-hover) !important;
+}
+
+.btn-outline-info {
+  color: var(--so-accent) !important;
+  border-color: var(--so-accent) !important;
+}
+
+.btn-outline-info:hover {
+  background-color: var(--so-accent) !important;
+  color: #fff !important;
+}
