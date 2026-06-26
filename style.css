@@ -10,10 +10,11 @@
   --so-low: #3fb950;
 }
 
-/* Push footer to bottom */
+/* ========== FORCE FOOTER TO BOTTOM ========== */
 html, body {
   height: 100%;
   margin: 0;
+  padding: 0;
 }
 
 body {
@@ -25,14 +26,21 @@ body {
   min-height: 100vh;
 }
 
+/* Main content pushes footer down */
 .container {
-  flex: 1;
+  flex: 1 0 auto;
 }
 
 footer {
+  flex-shrink: 0;
   margin-top: auto;
+  width: 100%;
+  background-color: var(--so-surface) !important;
+  border-top: 1px solid #21262d;
 }
+/* ========== END FOOTER FIX ========== */
 
+/* Hero */
 .hero-section {
   background: linear-gradient(135deg, #0d1117 0%, #0a2540 100%);
   border-bottom: 1px solid #21262d;
@@ -45,12 +53,13 @@ footer {
   letter-spacing: -1px;
 }
 
+/* Navbar */
 .navbar.bg-dark {
   background-color: var(--so-surface) !important;
   border-bottom: 1px solid #21262d;
 }
 
-/* Card styles */
+/* Cards */
 .stat-card {
   background-color: var(--so-surface);
   border: 1px solid #21262d;
@@ -88,7 +97,7 @@ footer {
   color: var(--so-text) !important;
 }
 
-/* Badge colors */
+/* Badges */
 .badge-critical { background-color: var(--so-critical); }
 .badge-high     { background-color: var(--so-high); }
 .badge-medium   { background-color: var(--so-medium); color: #000; }
