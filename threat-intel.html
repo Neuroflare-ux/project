@@ -9,9 +9,9 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand" href="index.html"> SecureOps</a>
+      <a class="navbar-brand" href="index.html">🛡️ SecureOps</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -19,7 +19,7 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link active" href="threat-intel.html">Threat Intel</a></li>
-          <li class="nav-item"><a class="nav-link" href="cloud-checker.html">Cloud Checker</a></li>
+          <li class="nav-item"><a class="nav-link" href="cloud-checker.html">Assessment</a></li>
           <li class="nav-item"><a class="nav-link" href="playbooks.html">Playbooks</a></li>
           <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
           <li class="nav-item"><a class="nav-link" href="tools.html">Tools</a></li>
@@ -30,27 +30,21 @@
   </nav>
 
   <div class="container my-5">
-    <h1 class="mb-1" style="color:#00e5ff;">Threat Intelligence</h1>
-    <p class="text-muted mb-4">Live CVE data from the NIST National Vulnerability Database.</p>
+    <h1 style="color:var(--so-accent);">Threat Intelligence</h1>
+    <p class="text-muted mb-4">Curated CVEs affecting cloud environments — AWS, Azure, GCP, containers, and DevOps tooling.</p>
 
-    <!-- Filter buttons -->
     <div class="mb-4">
-      <button class="btn btn-sm btn-outline-light me-2" onclick="filterCVEs('all')">All</button>
-      <button class="btn btn-sm btn-danger me-2" onclick="filterCVEs('critical')">Critical</button>
-      <button class="btn btn-sm btn-warning me-2" onclick="filterCVEs('high')">High</button>
-      <button class="btn btn-sm btn-info" onclick="filterCVEs('medium')">Medium</button>
+      <button class="filter-btn btn btn-sm btn-outline-light me-2 mb-2 active-filter" onclick="filterCVEs('all')">All</button>
+      <button class="filter-btn btn btn-sm btn-danger me-2 mb-2" onclick="filterCVEs('critical')">Critical</button>
+      <button class="filter-btn btn btn-sm btn-warning me-2 mb-2" onclick="filterCVEs('high')">High</button>
+      <button class="filter-btn btn btn-sm btn-info mb-2" onclick="filterCVEs('medium')">Medium</button>
     </div>
 
-    <div id="cve-table">
-      <div class="text-center py-5">
-        <div class="spinner-border text-info" role="status"></div>
-        <p class="mt-2">Loading vulnerabilities...</p>
-      </div>
-    </div>
+    <div id="cve-table"></div>
   </div>
 
-  <footer class="bg-dark text-light text-center py-3 mt-5">
-    <p class="mb-0">SecureOps Dashboard &copy; 2026</p>
+  <footer>
+    <p>SecureOps Dashboard &copy; 2026</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

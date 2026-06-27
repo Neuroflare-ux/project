@@ -8,93 +8,169 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand" href="index.html"> SecureOps</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navMenu">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="threat-intel.html">Threat Intel</a></li>
-            <li class="nav-item"><a class="nav-link" href="cloud-checker.html">Cloud Checker</a></li>
-            <li class="nav-item"><a class="nav-link" href="playbooks.html">Playbooks</a></li>
-            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-            <li class="nav-item"><a class="nav-link active" href="tools.html">Tools</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          </ul>
-        </div>
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">🛡️ SecureOps</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="threat-intel.html">Threat Intel</a></li>
+          <li class="nav-item"><a class="nav-link" href="cloud-checker.html">Assessment</a></li>
+          <li class="nav-item"><a class="nav-link" href="playbooks.html">Playbooks</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link active" href="tools.html">Tools</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <div class="container my-5">
-      <h1 style="color:#00e5ff;">Cloud Security Tools</h1>
-      <p class="text-muted mb-4">A curated list of tools to help you secure your cloud environment.</p>
+  <div class="container my-5">
+    <h1 style="color:var(--so-accent);">Security Tools</h1>
+    <p class="text-muted mb-2">Free and open-source tools used by real security teams.</p>
+    <p class="text-muted small mb-4">Tools marked <span class="badge bg-danger">Addresses CVE</span> directly mitigate vulnerabilities in our threat database.</p>
 
-      <div class="row">
-
-        <div class="col-md-6 mb-4">
-          <div class="stat-card p-4 h-100">
-            <h5>Prowler</h5>
-          <p class="text-muted small">AWS security best practices assessment tool. Checks over 300 controls across IAM, storage, networking, and logging. Used by security teams to audit AWS environments.</p>
-          <span class="badge bg-secondary mb-2">AWS</span>
-          <br>
-          <a href="https://github.com/prowler-cloud/prowler" target="_blank" class="btn btn-sm btn-outline-info mt-2">View on GitHub →</a>
-        </div>
-      </div>
-
-
+    <h5 class="text-muted mb-3">Cloud Scanning & Auditing</h5>
+    <div class="row">
       <div class="col-md-6 col-lg-4 mb-4">
         <div class="stat-card p-4 h-100">
-          <h5> ScoutSuite</h5>
-          <p class="text-muted small">Multi-cloud security auditing tool that works across AWS, GCP, and Azure. Generates a detailed HTML report of misconfigurations and risks across your cloud accounts.</p>
-          <span class="badge bg-secondary mb-2">Multi-cloud</span>
-          <br>
-          <a href="https://github.com/nccgroup/ScoutSuite" target="_blank" class="btn btn-sm btn-outline-info mt-2">View on GitHub →</a>
+          <h5>Prowler</h5>
+          <p class="text-muted small">AWS, GCP and Azure security scanner. Checks 300+ controls across IAM, storage, and networking.</p>
+          <div class="mb-2"><span class="badge bg-secondary me-1">AWS</span><span class="badge bg-secondary me-1">GCP</span><span class="badge bg-secondary">Azure</span></div>
+          <a href="https://github.com/prowler-cloud/prowler" target="_blank" class="btn btn-sm btn-outline-info">View on GitHub →</a>
         </div>
       </div>
-
       <div class="col-md-6 col-lg-4 mb-4">
         <div class="stat-card p-4 h-100">
-          <h5> Falco</h5>
-          <p class="text-muted small">Runtime security tool for Kubernetes and Linux. Detects unexpected behavior like privilege escalation, file system writes, and network connections in real time.</p>
-          <span class="badge bg-secondary mb-2">Kubernetes</span>
-          <br>
-          <a href="https://github.com/falcosecurity/falco" target="_blank" class="btn btn-sm btn-outline-info mt-2">View on GitHub →</a>
+          <h5>ScoutSuite</h5>
+          <p class="text-muted small">Multi-cloud auditing tool. Generates an HTML report of misconfigurations across AWS, GCP, and Azure.</p>
+          <div class="mb-2"><span class="badge bg-secondary">Multi-cloud</span></div>
+          <a href="https://github.com/nccgroup/ScoutSuite" target="_blank" class="btn btn-sm btn-outline-info">View on GitHub →</a>
         </div>
       </div>
-
       <div class="col-md-6 col-lg-4 mb-4">
         <div class="stat-card p-4 h-100">
-          <h5> HashiCorp Vault</h5>
-          <p class="text-muted small">Secrets management tool. Stores and controls access to API keys, passwords, and certificates. Prevents secrets from being hardcoded in source code.</p>
-          <span class="badge bg-secondary mb-2">Secrets</span>
-          <br>
-          <a href="https://github.com/hashicorp/vault" target="_blank" class="btn btn-sm btn-outline-info mt-2">View on GitHub →</a>
+          <h5>Trivy</h5>
+          <p class="text-muted small">Vulnerability scanner for container images, filesystems, and Git repos. Catches CVEs before deployment.</p>
+          <div class="mb-2"><span class="badge bg-secondary me-1">Containers</span><span class="badge bg-danger">Addresses CVE</span></div>
+          <a href="https://github.com/aquasecurity/trivy" target="_blank" class="btn btn-sm btn-outline-info">View on GitHub →</a>
         </div>
       </div>
+    </div>
 
+    <h5 class="text-muted mb-3 mt-2">Container & Kubernetes Security</h5>
+    <div class="row">
       <div class="col-md-6 col-lg-4 mb-4">
         <div class="stat-card p-4 h-100">
-          <h5> OWASP ZAP</h5>
-          <p class="text-muted small">Web application vulnerability scanner. Great for finding common issues like XSS, SQL injection, and insecure headers in your web apps before attackers do.</p>
-          <span class="badge bg-secondary mb-2">Web Apps</span>
-          <br>
-          <a href="https://github.com/zaproxy/zaproxy" target="_blank" class="btn btn-sm btn-outline-info mt-2">View on GitHub →</a>
+          <h5>Falco</h5>
+          <p class="text-muted small">Runtime security for Kubernetes and Linux. Detects container escapes and privilege escalation in real time. Relevant to CVE-2024-21626.</p>
+          <div class="mb-2"><span class="badge bg-secondary me-1">Kubernetes</span><span class="badge bg-danger">Addresses CVE</span></div>
+          <a href="https://github.com/falcosecurity/falco" target="_blank" class="btn btn-sm btn-outline-info">View on GitHub →</a>
         </div>
       </div>
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="stat-card p-4 h-100">
+          <h5>Grype</h5>
+          <p class="text-muted small">Vulnerability scanner for container images by Anchore. Integrates with CI/CD pipelines to catch CVEs before production.</p>
+          <div class="mb-2"><span class="badge bg-secondary me-1">Docker</span><span class="badge bg-secondary">CI/CD</span></div>
+          <a href="https://github.com/anchore/grype" target="_blank" class="btn btn-sm btn-outline-info">View on GitHub →</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="stat-card p-4 h-100">
+          <h5>Kubescape</h5>
+          <p class="text-muted small">Kubernetes security posture tool. Scans clusters against NSA and MITRE ATT&CK benchmarks.</p>
+          <div class="mb-2"><span class="badge bg-secondary">Kubernetes</span></div>
+          <a href="https://github.com/kubescape/kubescape" target="_blank" class="btn btn-sm btn-outline-info">View on GitHub →</a>
+        </div>
+      </div>
+    </div>
 
+    <h5 class="text-muted mb-3 mt-2">Secrets & Identity Management</h5>
+    <div class="row">
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="stat-card p-4 h-100">
+          <h5>HashiCorp Vault</h5>
+          <p class="text-muted small">Secrets management platform. Stores API keys, passwords, and certificates. Prevents hardcoded secrets in source code.</p>
+          <div class="mb-2"><span class="badge bg-secondary me-1">Secrets</span><span class="badge bg-secondary">IAM</span></div>
+          <a href="https://github.com/hashicorp/vault" target="_blank" class="btn btn-sm btn-outline-info">View on GitHub →</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="stat-card p-4 h-100">
+          <h5>Gitleaks</h5>
+          <p class="text-muted small">Scans Git repos for hardcoded secrets — API keys, tokens accidentally committed to source control.</p>
+          <div class="mb-2"><span class="badge bg-secondary me-1">Secrets</span><span class="badge bg-secondary">CI/CD</span></div>
+          <a href="https://github.com/gitleaks/gitleaks" target="_blank" class="btn btn-sm btn-outline-info">View on GitHub →</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="stat-card p-4 h-100">
+          <h5>Trufflehog</h5>
+          <p class="text-muted small">Searches Git history for high-entropy strings and known secret patterns. Good for auditing existing repos.</p>
+          <div class="mb-2"><span class="badge bg-secondary">Secrets</span></div>
+          <a href="https://github.com/trufflesecurity/trufflehog" target="_blank" class="btn btn-sm btn-outline-info">View on GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <h5 class="text-muted mb-3 mt-2">Web & Network Security</h5>
+    <div class="row">
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="stat-card p-4 h-100">
+          <h5>OWASP ZAP</h5>
+          <p class="text-muted small">Web app vulnerability scanner. Finds XSS, SQL injection, and insecure headers in cloud-hosted apps.</p>
+          <div class="mb-2"><span class="badge bg-secondary">Web Apps</span></div>
+          <a href="https://github.com/zaproxy/zaproxy" target="_blank" class="btn btn-sm btn-outline-info">View on GitHub →</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="stat-card p-4 h-100">
+          <h5>Nmap</h5>
+          <p class="text-muted small">Network discovery and port scanning. Maps exposed services on cloud infrastructure to identify what's open to the internet.</p>
+          <div class="mb-2"><span class="badge bg-secondary">Network</span></div>
+          <a href="https://github.com/nmap/nmap" target="_blank" class="btn btn-sm btn-outline-info">View on GitHub →</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="stat-card p-4 h-100">
+          <h5>Nuclei</h5>
+          <p class="text-muted small">Fast CVE scanner using community templates. Checks for known vulnerabilities across web apps and cloud services. Templates updated daily.</p>
+          <div class="mb-2"><span class="badge bg-secondary me-1">Web Apps</span><span class="badge bg-danger">Addresses CVE</span></div>
+          <a href="https://github.com/projectdiscovery/nuclei" target="_blank" class="btn btn-sm btn-outline-info">View on GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <h5 class="text-muted mb-3 mt-2">Monitoring & Incident Response</h5>
+    <div class="row">
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="stat-card p-4 h-100">
+          <h5>Wazuh</h5>
+          <p class="text-muted small">Open-source SIEM and XDR platform. Collects logs from cloud workloads and alerts on suspicious activity. Free alternative to Splunk.</p>
+          <div class="mb-2"><span class="badge bg-secondary me-1">SIEM</span><span class="badge bg-secondary">Monitoring</span></div>
+          <a href="https://github.com/wazuh/wazuh" target="_blank" class="btn btn-sm btn-outline-info">View on GitHub →</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="stat-card p-4 h-100">
+          <h5>TheHive</h5>
+          <p class="text-muted small">Open-source incident response platform. Helps teams manage alerts, track incidents, and coordinate response. Integrates with threat intelligence feeds.</p>
+          <div class="mb-2"><span class="badge bg-secondary me-1">IR</span><span class="badge bg-secondary">SOAR</span></div>
+          <a href="https://github.com/TheHive-Project/TheHive" target="_blank" class="btn btn-sm btn-outline-info">View on GitHub →</a>
+        </div>
+      </div>
     </div>
   </div>
 
-  <footer class="bg-dark text-light text-center py-3 mt-5">
-    <p class="mb-0">SecureOps Dashboard &copy; 2026</p>
+  <footer>
+    <p>SecureOps Dashboard &copy; 2026</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
-            

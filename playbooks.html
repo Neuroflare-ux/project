@@ -9,9 +9,10 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg">
+
     <div class="container">
-      <a class="navbar-brand" href="index.html"> SecureOps</a>
+      <a class="navbar-brand" href="index.html">🛡️ SecureOps</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -19,7 +20,7 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="threat-intel.html">Threat Intel</a></li>
-          <li class="nav-item"><a class="nav-link" href="cloud-checker.html">Cloud Checker</a></li>
+          <li class="nav-item"><a class="nav-link" href="cloud-checker.html">Assessment</a></li>
           <li class="nav-item"><a class="nav-link active" href="playbooks.html">Playbooks</a></li>
           <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
           <li class="nav-item"><a class="nav-link" href="tools.html">Tools</a></li>
@@ -29,21 +30,33 @@
     </div>
   </nav>
 
+<div style="
+  background: linear-gradient(135deg, rgba(7,11,20,0.88) 0%, rgba(13,24,41,0.85) 100%),
+  url('images/gettyimages-2216886688-170667a.jpg') center/cover no-repeat;
+  padding: 60px 0;
+  border-bottom: 1px solid var(--so-border);
+  text-align: center;">
+  <div class="container">
+    <p class="small mb-2" style="color:var(--so-accent);letter-spacing:3px;text-transform:uppercase;">Incident Response</p>
+    <h1 style="color:#ffffff;font-size:2.5rem;font-weight:800;">Playbooks</h1>
+    <p style="color:var(--so-muted);max-width:500px;margin:0 auto;">Step-by-step guides for common cloud security incidents.</p>
+  </div>
+</div>
+
   <div class="container my-5">
-    <h1 style="color:#00e5ff;">Incident Response Playbooks</h1>
+    <h1 style="color:var(--so-accent);">Incident Response Playbooks</h1>
     <p class="text-muted mb-4">Step-by-step guides for common cloud security incidents.</p>
 
     <div class="accordion" id="playbookAccordion">
 
-      <!-- Playbook 1 -->
-      <div class="accordion-item bg-dark border-secondary mb-2">
+      <div class="accordion-item mb-2">
         <h2 class="accordion-header">
-          <button class="accordion-button collapsed bg-dark text-light border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#p1">
-             Compromised Credentials
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#p1">
+            Compromised Credentials
           </button>
         </h2>
         <div id="p1" class="accordion-collapse collapse" data-bs-parent="#playbookAccordion">
-          <div class="accordion-body bg-dark text-light">
+          <div class="accordion-body">
             <ol>
               <li>Immediately revoke the affected access keys or tokens in your cloud console.</li>
               <li>Check CloudTrail / audit logs for any actions taken with those credentials.</li>
@@ -57,15 +70,14 @@
         </div>
       </div>
 
-      <!-- Playbook 2 -->
-      <div class="accordion-item bg-dark border-secondary mb-2">
+      <div class="accordion-item mb-2">
         <h2 class="accordion-header">
-          <button class="accordion-button collapsed bg-dark text-light border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#p2">
-             Exposed Storage Bucket
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#p2">
+            Exposed Storage Bucket
           </button>
         </h2>
         <div id="p2" class="accordion-collapse collapse" data-bs-parent="#playbookAccordion">
-          <div class="accordion-body bg-dark text-light">
+          <div class="accordion-body">
             <ol>
               <li>Set the bucket ACL to private immediately in the cloud console.</li>
               <li>Remove any public access block exceptions.</li>
@@ -79,15 +91,14 @@
         </div>
       </div>
 
-      <!-- Playbook 3 -->
-      <div class="accordion-item bg-dark border-secondary mb-2">
+      <div class="accordion-item mb-2">
         <h2 class="accordion-header">
-          <button class="accordion-button collapsed bg-dark text-light border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#p3">
-             Ransomware Attack
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#p3">
+            Ransomware Attack
           </button>
         </h2>
         <div id="p3" class="accordion-collapse collapse" data-bs-parent="#playbookAccordion">
-          <div class="accordion-body bg-dark text-light">
+          <div class="accordion-body">
             <ol>
               <li>Isolate affected instances — detach from the network immediately.</li>
               <li>Do NOT pay the ransom — it does not guarantee recovery.</li>
@@ -100,15 +111,14 @@
         </div>
       </div>
 
-      <!-- Playbook 4 -->
-      <div class="accordion-item bg-dark border-secondary mb-2">
+      <div class="accordion-item mb-2">
         <h2 class="accordion-header">
-          <button class="accordion-button collapsed bg-dark text-light border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#p4">
-             DDoS Attack
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#p4">
+            DDoS Attack
           </button>
         </h2>
         <div id="p4" class="accordion-collapse collapse" data-bs-parent="#playbookAccordion">
-          <div class="accordion-body bg-dark text-light">
+          <div class="accordion-body">
             <ol>
               <li>Enable your cloud provider's DDoS protection (AWS Shield, GCP Cloud Armor).</li>
               <li>Apply rate limiting rules on your load balancer or WAF.</li>
@@ -121,11 +131,53 @@
         </div>
       </div>
 
+      <div class="accordion-item mb-2">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#p5">
+            Container Escape
+          </button>
+        </h2>
+        <div id="p5" class="accordion-collapse collapse" data-bs-parent="#playbookAccordion">
+          <div class="accordion-body">
+            <ol>
+              <li>Stop and remove the affected container immediately.</li>
+              <li>Inspect the host system for signs of compromise — unusual processes, new users, modified files.</li>
+              <li>Check if the escape used a known CVE (e.g. CVE-2024-21626 in runc) and patch immediately.</li>
+              <li>Review container runtime configuration — ensure containers run as non-root.</li>
+              <li>Scan all other container images with Trivy before redeployment.</li>
+              <li>Enable Falco for real-time runtime monitoring going forward.</li>
+            </ol>
+            <a href="tools.html" class="btn btn-sm btn-outline-info mt-2">See container security tools →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item mb-2">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#p6">
+            CI/CD Pipeline Compromise
+          </button>
+        </h2>
+        <div id="p6" class="accordion-collapse collapse" data-bs-parent="#playbookAccordion">
+          <div class="accordion-body">
+            <ol>
+              <li>Immediately disable the compromised pipeline and revoke all associated credentials.</li>
+              <li>Review recent build logs for any unexpected steps or injected commands.</li>
+              <li>Check all artifacts produced during the compromise window — they may contain malicious code.</li>
+              <li>Rotate secrets stored in the CI/CD system (API keys, deployment tokens).</li>
+              <li>Patch the CI/CD tool — check CVE-2024-23897 (Jenkins) or CVE-2024-27198 (TeamCity).</li>
+              <li>Restrict CI/CD dashboard access to VPN only going forward.</li>
+            </ol>
+            <a href="threat-intel.html" class="btn btn-sm btn-outline-info mt-2">See related CVEs →</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <footer style="margin-top: auto; width: 100%;">
-  <p class="mb-0">SecureOps Dashboard &copy; 2026</p>
+  <footer>
+    <p>SecureOps Dashboard &copy; 2026</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
